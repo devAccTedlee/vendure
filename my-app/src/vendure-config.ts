@@ -3,12 +3,15 @@ import {
     DefaultJobQueuePlugin,
     DefaultSearchPlugin,
     VendureConfig,
+    bootstrap,
+    VendurePlugin
 } from '@vendure/core'; 
 import { defaultEmailHandlers, EmailPlugin } from '@vendure/email-plugin';
 import { AssetServerPlugin } from '@vendure/asset-server-plugin';
 import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
 import { compileUiExtensions } from '@vendure/ui-devkit/compiler';
 import path from 'path';
+import { RandomCatPlugin } from '../RandomCatPlugin';
 
 export const config: VendureConfig = {
     apiOptions: {
@@ -97,5 +100,6 @@ export const config: VendureConfig = {
                 }],
               }),
         }),
+        RandomCatPlugin,
     ],
 };

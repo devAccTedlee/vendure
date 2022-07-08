@@ -8,6 +8,7 @@
     "target": "es2017",
     "strict": true,
     "sourceMap": false,
+    "noImplicitAny": false,
     "outDir": "./dist",
     "baseUrl": "./"
   },
