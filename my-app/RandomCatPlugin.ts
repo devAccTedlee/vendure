@@ -11,7 +11,7 @@ const schemaExtension = gql`
         addRandomCat(id: ID!): Product!
     }
 `;
-
+//CatImageURL INJECTABLE
 @Injectable()
 export class CatFetcher {
   /** Fetch a random cat image url from random.cat */
