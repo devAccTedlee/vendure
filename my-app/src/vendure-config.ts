@@ -12,6 +12,8 @@ import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
 import { compileUiExtensions } from '@vendure/ui-devkit/compiler';
 import path from 'path';
 import { RandomCatPlugin } from '../RandomCatPlugin';
+import { NgModule } from '@angular/core';
+import { SharedModule, addActionBarItem } from '@vendure/admin-ui/core';
 
 export const config: VendureConfig = {
     apiOptions: {
@@ -95,7 +97,12 @@ export const config: VendureConfig = {
                       type: 'shared',
                       ngModuleFileName: 'greeter-shared.module.ts',
                       ngModuleName: 'GreeterSharedModule',
-                    }
+                    },
+                    {
+                        type: 'shared',
+                        ngModuleFileName: 'actionbar-btn.ts',
+                        ngModuleName: 'SharedExtensionModule',
+                      },
                   ],
                 }],
               }),
