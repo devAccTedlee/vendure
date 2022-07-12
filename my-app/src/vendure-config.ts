@@ -3,8 +3,6 @@ import {
     DefaultJobQueuePlugin,
     DefaultSearchPlugin,
     VendureConfig,
-    bootstrap,
-    VendurePlugin
 } from '@vendure/core'; 
 import { defaultEmailHandlers, EmailPlugin } from '@vendure/email-plugin';
 import { AssetServerPlugin } from '@vendure/asset-server-plugin';
@@ -12,8 +10,6 @@ import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
 import { compileUiExtensions } from '@vendure/ui-devkit/compiler';
 import path from 'path';
 import { RandomCatPlugin } from '../RandomCatPlugin';
-import { NgModule } from '@angular/core';
-import { SharedModule, addActionBarItem } from '@vendure/admin-ui/core';
 
 export const config: VendureConfig = {
     apiOptions: {
@@ -56,7 +52,14 @@ export const config: VendureConfig = {
     paymentOptions: {
         paymentMethodHandlers: [dummyPaymentHandler],
     },
-    customFields: {},
+    customFields: {
+        Product: [
+            {
+                name: 'intensity', type: 'int', min: 0, max: 100, defaultValue: 0,
+                ui: { component: 'slider-form-input' }
+            },            
+        ],
+    },
     plugins: [
         AssetServerPlugin.init({
             route: 'assets',
@@ -102,6 +105,11 @@ export const config: VendureConfig = {
                         type: 'shared',
                         ngModuleFileName: 'actionbar-btn.ts',
                         ngModuleName: 'SharedExtensionModule',
+                    },
+                    {
+                        type: 'shared',
+                        ngModuleFileName: 'shared.module.ts',
+                        ngModuleName: 'TSharedExtensionModule',
                       },
                   ],
                 }],
