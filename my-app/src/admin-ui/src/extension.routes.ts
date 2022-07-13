@@ -1,4 +1,4 @@
 export const extensionRoutes = [  {
     path: 'extensions/greet',
-    loadChildren: () => import('./extensions/27fe569634f0daa3262bbdd522c8167ca79f20f07a1d440f66387bec1d46702d/greeter.module').then(m => m.GreeterModule),
+    loadChildren: () => import('./extensions/e8a510266a10f3671bdcd55d01049b443c8dc67dd95c33e87d98da0ebbb8bf18/greeter.module').then(m => m.GreeterModule),
   }];

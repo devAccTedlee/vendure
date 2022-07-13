@@ -106,11 +106,6 @@ export const config: VendureConfig = {
                         ngModuleFileName: 'actionbar-btn.ts',
                         ngModuleName: 'SharedExtensionModule',
                     },
-                    {
-                        type: 'shared',
-                        ngModuleFileName: 'shared.module.ts',
-                        ngModuleName: 'TSharedExtensionModule',
-                      },
                   ],
                 }],
               }),
