@@ -11,6 +11,7 @@
     "noImplicitAny": false,
     "outDir": "./dist",
     "strictPropertyInitialization": false,
+    "lib": ["dom"],
     "baseUrl": "./"
   },
   "exclude": ["node_modules", "migration.ts"]

@@ -3,6 +3,7 @@ import {
     DefaultJobQueuePlugin,
     DefaultSearchPlugin,
     VendureConfig,
+    LanguageCode,
 } from '@vendure/core'; 
 import { defaultEmailHandlers, EmailPlugin } from '@vendure/email-plugin';
 import { AssetServerPlugin } from '@vendure/asset-server-plugin';
@@ -89,6 +90,9 @@ export const config: VendureConfig = {
                 outputPath: path.join(__dirname, 'admin-ui'),
                 extensions: [{
                   extensionPath: path.join(__dirname, 'ui-extensions'),
+                  translations: {
+                    ko: path.join(__dirname,'./translations/ko'),
+                  },
                   ngModules: [
                     {
                       type: 'lazy',
@@ -108,7 +112,11 @@ export const config: VendureConfig = {
                     },
                   ],
                 }],
-              }),
+            }),
+            adminUiConfig:{
+                defaultLanguage: LanguageCode.en,
+                availableLanguages: [LanguageCode.en, LanguageCode.ko],
+            }
         }),
         RandomCatPlugin,
     ],

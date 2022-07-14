@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GreeterSharedModule } from './extensions/e8a510266a10f3671bdcd55d01049b443c8dc67dd95c33e87d98da0ebbb8bf18/greeter-shared.module';
-import { SharedExtensionModule } from './extensions/e8a510266a10f3671bdcd55d01049b443c8dc67dd95c33e87d98da0ebbb8bf18/actionbar-btn';
+import { GreeterSharedModule } from './extensions/8c533f7b0a6c3d0c33a6028b7578298139f821c251722f396342f38c07d951eb/greeter-shared.module';
+import { SharedExtensionModule } from './extensions/8c533f7b0a6c3d0c33a6028b7578298139f821c251722f396342f38c07d951eb/actionbar-btn';
 
 
 @NgModule({
