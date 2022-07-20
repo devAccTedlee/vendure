@@ -2,12 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'greeter',
-  template: `<h1>{{ greeting }}</h1>
-  <button
-    [disabled]="canClick"
-    (click)="checkMessage()">
-    Trigger alert message
-  </button>`,
+  templateUrl: './greeter.html',
 })
 export class GreeterComponent {
   greeting = 'Hello!';
