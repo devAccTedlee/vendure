@@ -4,3 +4,11 @@
     (click)="checkMessage()">
     Trigger alert message
   </button>
+
+<p
+  [id]="colorAttr"
+  [style.color]="fontColor">
+  You can set color in the component!
+</p>
+
+<p>My color is {{ fontColor }}</p>
