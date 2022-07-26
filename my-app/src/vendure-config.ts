@@ -11,6 +11,7 @@ import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
 import { compileUiExtensions } from '@vendure/ui-devkit/compiler';
 import path from 'path';
 import { RandomCatPlugin } from '../RandomCatPlugin';
+import { ReviewsPlugin } from './ui-extensions/review-widget/reviews-plugin';
 
 export const config: VendureConfig = {
     apiOptions: {
@@ -119,5 +120,6 @@ export const config: VendureConfig = {
             }
         }),
         RandomCatPlugin,
+        ReviewsPlugin,
     ],
 };
