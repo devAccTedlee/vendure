@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "content": "ted_1",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "content": "ted_2",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "content": "ted_3",
+      "completed": false
+    },
+    {
+      "content": "tes",
+      "complete": false,
+      "id": 4
+    },
+    {
+      "content": "ted_4",
+      "complete": false,
+      "id": 5
+    }
+  ]
+}
