@@ -1,7 +1,23 @@
 <section>
   <article>
-    <input type="text" [(ngModel)]="content" value="테스트Content" >
-    <button (click)="addTodo()"> Submit </button>
+    <form [formGroup]="checkoutForm" (ngSubmit)="addTodo()">
+      <div>
+        <label for="name">
+          Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+      </div>
+    
+      <div>
+        <label for="address">
+          Address
+        </label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+      <button type="submit"> Submit </button>
+    </form>
+    <!-- <input type="text" [(ngModel)]="content" value="테스트Content" > -->
+    <!-- <button (click)="addTodo()"> Submit </button> -->
     <h1 i18n>Under Construction!</h1>
     <p i18n>This page is under construction.</p>
     <button (click)="jsonBtn()">S.T.A.R.T</button>

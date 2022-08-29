@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams, HttpErrorResponse } from '@angular
 import { catchError, tap } from 'rxjs/operators';
 import { Observable, Observer, throwError } from 'rxjs';
 import { Todo } from './todo.interface';
+import { AbstractControl, FormArray, FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,9 @@ export class TodoService {
   url = "http://localhost:3000/todos";
   // url = "https://stdpay.inicis.com/stdjs/INIStdPay.js";
 
-  constructor(public http:HttpClient){}
+  constructor(
+    public http:HttpClient
+    ){}
   
   
   
@@ -34,8 +37,8 @@ export class TodoService {
     .pipe(catchError(this.handleError));
   }
 
-  add(content: string): Observable<Todo>{
-    const payload = { content, complete: false };
+  add(serializedForm:String): Observable<Todo>{
+    const payload = { serializedForm, complete: false };
     return this.http.post<Todo>(this.url,payload)
     .pipe(catchError(this.handleError));
   }

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams, HttpErrorResponse } from '@angular
 import { catchError, tap } from 'rxjs/operators';
 import { Todo } from './todo.interface';
 import { TodoService } from './todo.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +16,14 @@ export class AppComponent {
   title = 'angular-internationalization-example';
   todos: Todo[] = [];
   content!: string;
+  checkoutForm!: FormGroup;
 
-  checkoutForm = this.formBuilder.group({
-    name: '',
-    address: ''
-  });
+  ngOnInit(){
+    this.checkoutForm = this.formBuilder.group({
+      name: "",
+      address: ""
+    });
+  }
 
   constructor(
     private todo: TodoService,
@@ -28,10 +31,14 @@ export class AppComponent {
     ){}
 
     addTodo() {
-      if(!this.content){return;}
-      this.todo.add(this.content)
+      if(!this.checkoutForm){return;}
+      let formObj = this.checkoutForm.getRawValue();//  { name:'',address:''  }
+      let serializedForm = JSON.stringify(formObj);
+      // this.todo.add(this.checkoutForm.get('name')?.value )
+      this.todo.add( serializedForm )
       .subscribe(
-        todo => this.todos = [...this.todos, todo],
+        // todo => this.todos = [...this.todos, todo],
+        data => console.log("success!", data),
         error => console.error('[Todoservice.add',error)
       );
       this.content='';
