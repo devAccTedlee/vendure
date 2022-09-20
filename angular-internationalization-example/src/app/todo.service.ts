@@ -38,8 +38,9 @@ export class TodoService {
   }
 
   add(serializedForm:String): Observable<Todo>{
-    const payload = { serializedForm, complete: false };
+    const payload = { content: serializedForm, complete: false };
     return this.http.post<Todo>(this.url,payload)
+    // return this.http.post(this.url,payload)
     .pipe(catchError(this.handleError));
   }
 
